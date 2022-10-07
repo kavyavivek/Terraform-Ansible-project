@@ -1,5 +1,5 @@
 #########################################################
-# DO Community Playbooks: Wordpress on Ubuntu 18.04 LAMP
+# Install Wordpress on Ubuntu 
 #########################################################
 ---
 - hosts: all
@@ -12,7 +12,7 @@
       apt: name=aptitude update_cache=yes state=latest force_apt_get=yes
       tags: [ system ]
 
-    - name: Install LAMP Packages
+    - name: Install Packages
       apt: name={{ item }} update_cache=yes state=latest
       loop: [ 'apache2', 'mysql-server', 'python3-pymysql', 'php', 'php-mysql', 'libapache2-mod-php' ]
       tags: [ system ]
